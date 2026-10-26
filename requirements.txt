@@ -1,0 +1,15 @@
+# Scientific stack for the coursework notebooks.
+# PyTorch is the CPU wheel. Pip needs the PyTorch CPU index as well as PyPI.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+numpy==2.5.4
+pandas==3.1.0
+matplotlib==3.11.2
+scikit-learn==1.9.1
+scipy==1.18.1
+torch==2.14.1+cpu
+jupyter==1.1.1
+jupyterlab==4.6.4
+nbconvert==7.17.2
+ipykernel==7.4.0
+wfdb==4.3.1
