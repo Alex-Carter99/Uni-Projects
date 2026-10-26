@@ -1,6 +1,6 @@
 # University projects
 
-MSc Data Science coursework. The runnable pieces are Jupyter notebooks. Probabilistic modelling and the CS4730 brief are PDF reports only.
+MSc Data Science coursework, plus a Jupyter workspace for the VTaC ventricular-tachycardia alarm dataset. The runnable pieces are Jupyter notebooks. Probabilistic modelling and the CS4730 brief are PDF reports only.
 
 ## Cursor Cloud specific instructions
 
@@ -14,7 +14,16 @@ python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 ```
 
-`requirements.txt` pins numpy, pandas, matplotlib, scikit-learn, scipy, a CPU PyTorch wheel, jupyter, nbconvert, and ipykernel. The install is idempotent. Set `MPLBACKEND=Agg` before executing notebooks from a terminal.
+`requirements.txt` pins numpy, pandas, matplotlib, scikit-learn, scipy, a CPU PyTorch wheel, jupyter, JupyterLab, nbconvert, ipykernel, and wfdb. The install is idempotent. Set `MPLBACKEND=Agg` before executing coursework notebooks from a terminal. Leave it unset when executing the VTaC notebook if you want the label chart embedded.
+
+JupyterLab for VTaC development, from the repo root:
+
+```bash
+source .venv/bin/activate
+jupyter lab --ip=0.0.0.0 --port=8888 --no-browser
+```
+
+Starter notebook: `vtac/notebooks/vtac_deep_learning.ipynb`. It downloads the public label CSVs. It does not download the 2.7 GB waveform ZIP. Download and unpack instructions are in `vtac/README.md`.
 
 Notebooks, from the directory that contains each file:
 
@@ -31,5 +40,3 @@ export MPLBACKEND=Agg
   --ExecutePreprocessor.timeout=1800 \
   AM41DP-data-science-programming/task-1-constraint-solver.ipynb
 ```
-
-VTaC / PhysioNet is not part of this repository. Do not clone or download that dataset for this codebase.
